@@ -1,10 +1,16 @@
-fn concat_string(param1:String, param2:String) -> String{
-    return param1 + " " + &param2;
+fn concat_string() -> String{
+    let mut param1 = String::new();
+    std::io::stdin().read_line(&mut param1).expect("Input for param1 Failed");
+
+    let mut param2 = String::new();
+    std::io::stdin().read_line(&mut param2).expect("Input for param2 Failed");
+
+    let x = String::from(param1.strip_suffix("\r\n").unwrap());
+    let y = String::from(param2.strip_suffix("\r\n").unwrap());
+    
+    return x + " " + &y;
 }
 
 fn main() {
-    let param1:String = String::from("I love");
-    let param2:String = String::from("Rust");
-    let concatenated = concat_string(param1, param2);
-    println!("{concatenated}");
+    println!("{}", concat_string());
 }
