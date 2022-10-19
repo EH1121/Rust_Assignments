@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "task_1_concat_string"
+name = "task_1"
 version = "0.1.0"
